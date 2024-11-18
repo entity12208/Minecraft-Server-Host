@@ -1,0 +1,19 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+form {
+    margin-top: 20px;
+}
+label {
+    display: block;
+    margin-top: 10px;
+}
+input, select {
+    margin-bottom: 10px;
+}
+#message {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: green;
+}
