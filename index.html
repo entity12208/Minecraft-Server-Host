@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Server Hosting</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Welcome to Free Minecraft Server Hosting</h1>
+    <form id="serverForm">
+        <label for="serverName">Server Name:</label>
+        <input type="text" id="serverName" name="serverName" required>
+        <br>
+        <label for="serverRAM">RAM Allocation:</label>
+        <input type="text" id="serverRAM" name="serverRAM" required>
+        <br>
+        <label for="serverType">Server Type:</label>
+        <select id="serverType" name="serverType" required>
+            <option value="java">Java Edition</option>
+            <option value="bedrock">Bedrock Edition</option>
+            <option value="spigot">Spigot</option>
+            <option value="paper">Paper</option>
+            <option value="forge">Forge</option>
+        </select>
+        <br>
+        <label for="serverMods">Mods (Comma-separated):</label>
+        <input type="text" id="serverMods" name="serverMods">
+        <br>
+        <button type="submit">Create Server</button>
+    </form>
+    <div id="message"></div>
+    <script src="scripts.js"></script>
+</body>
+</html>
