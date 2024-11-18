@@ -23,7 +23,7 @@ jobs:
     - name: Run Minecraft Server
       run: |
         echo "eula=true" > eula.txt
-        java -Xmx1024M -Xms1024M -jar server.jar nogui & sleep 60
+        java -Xmx1024M -Xms1024M -jar server.jar
 
     - name: Upload World to Dropbox
       env:
