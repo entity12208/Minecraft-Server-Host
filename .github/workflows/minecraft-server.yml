@@ -22,4 +22,15 @@ jobs:
     - name: Run Minecraft Server
       run: |
         echo "eula=true" > eula.txt
-        java -Xmx1024M -Xms1024M -jar server.jar nogui
+        java -Xmx1024M -Xms1024M -jar server.jar nogui & sleep 60
+
+    - name: Upload World to Dropbox
+      env:
+        DROPBOX_ACCESS_TOKEN: ${{ secrets.DROPBOX_ACCESS_TOKEN }}
+      run: |
+        apt-get update && apt-get install -y curl jq
+        curl -X POST https://content.dropboxapi.com/2/files/upload \
+          --header "Authorization: Bearer $DROPBOX_ACCESS_TOKEN" \
+          --header "Dropbox-API-Arg: {\"path\": \"/minecraft/world.zip\",\"mode\": \"overwrite\",\"autorename\": true,\"mute\": false,\"strict_conflict\": false}" \
+          --header "Content-Type: application/octet-stream" \
+          --data-binary @world.zip
